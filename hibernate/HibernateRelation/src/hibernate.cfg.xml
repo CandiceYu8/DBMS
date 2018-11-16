@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- 这个属性使 Hibernate 应用为被选择的数据库生成适当的SQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <!-- JDBC 驱动程序类 -->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <!-- 数据库实例的 JDBC URL -->
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+        <!-- 连接数据库的用户名 -->
+        <property name="hibernate.connection.username">postgres</property>
+        <!-- 连接数据库的密码 -->
+        <property name="hibernate.connection.password">6711</property>
+
+        <!-- Set "true" to show SQL statements -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- 自动创建表 -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <mapping class="entities.Student"/>
+        <mapping class="entities.Laptop"/>
+    </session-factory>
+</hibernate-configuration>
